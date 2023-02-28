@@ -38,6 +38,33 @@ Corremos nuestra aplicación usando:
 
 esto hara que se haga uso de nuestros estilos en la ruta y entramos con ```localhost:8000/products``` y empezamos a probar.
 
+## Docker
+Intente hacerlo con docker, pero tengo un problema con los estilos de Tailwind, la aplicación hace su tarea pero no se aplican los estilos debido a un asunto con ViteJS, lo pueden probar usando el comando:
+```docker-compose up```
+
+En este caso algunas veces se tiene un problema con la cache y se puede solucionar con el comando:
+```docker exec -it jsonresume-manager-php-1 php artisan config:cache```
+
+También un problema de permisos con sessions o algo por el estilo y con eso usamos el comando para dar permisos:
+```sudo chmod -R 777 storage/``` tambien se puede sin ```sudo```.
+
+Ahora vamos a hacer un docker ps y se mostrarán los siguientes contenedores:
+![This is an image](/images/contenedores_2.png)
+
+Vamos a hacer las migraciones dentro del que tiene php:
+```docker exec -it list-products-php-1 php artisan migrate```
+
+Voy a dejar un archivo llamado ```.env.example_docker``` donde va a estar toda la configuración y se renombra y se pone ```.env```.
+
+Para ejecutar las migraciones es similar al comando de arriba solo que con la siguiente variación:
+```docker exec -it list-products-php-1 php artisan migrate:refresh --seed```
+
+En teoría de Node ya no se debería correr nada pero debido al problema con ViteJS y Tailwind no carga los estilos como en las imagenes de abajo.
+
+
+
+
+
 ![This is an image](/images/database.png)
 
 
