@@ -10,6 +10,7 @@ Este proyecto fue construido en Laravel 10 usando Tailwind CSS con ViteJS.
 ## Requerimientos
 Para poder hacer uso de la aplicación debemos configurar nuestro proyecto debemos configurar nuestro archivo ```.env```
 y tener instalado xampp u otro paquete, al igual que PHP 8.2 y NodeJS 19. Xampp ya viene con PHP 8.2 y composer.
+Para tomar como base nuestro ```.env.example``` usamos el comando ```cp .env.example .env```
 
 ## Comandos para la hacer uso de la aplicación
 Usamos los comandos:
