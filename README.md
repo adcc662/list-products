@@ -60,6 +60,7 @@ Para ejecutar las migraciones es similar al comando de arriba solo que con la si
 ```docker exec -it list-products-php-1 php artisan migrate:refresh --seed```
 
 En teoría de Node ya no se debería correr nada pero debido al problema con ViteJS y Tailwind no carga los estilos como en las imagenes de abajo.
+Para docker el puerto es ```localhost:8080/products```
 
 
 
